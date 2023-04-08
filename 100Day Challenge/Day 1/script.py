@@ -42,3 +42,28 @@ letters = ["a", "b", "c", "d", "e", "f"]
 # n = randint(0, 10)
 # n = choice(letters)
 # print(n)
+
+# class definition
+
+class Car:
+    # parameters must
+    def start(self):
+        return "Car Started"
+    engine = "Formula Engine"
+
+
+my_car = Car()
+# print(my_car.start())
+
+
+class SecondClass(Car):
+    def __init__(self, class_name):
+        self.name_changed = "Name Changed"
+        # print("Building the Class...", class_name, self.name_changed)
+
+    def superFunction(self):
+        return super().start()
+
+
+my_class = SecondClass("second class")
+print(my_class.superFunction())
