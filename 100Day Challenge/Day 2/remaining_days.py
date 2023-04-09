@@ -4,17 +4,12 @@ age = input("What is your current age? ")
 
 # Write your code below this line 👇
 
-total_days = 90 * 365
-total_weeks = 90 * 52
-total_months = 90 * 12
+age_as_int = int(age)
+years_remaining = 90 - age_as_int
+days_remaining = years_remaining * 365
+weeks_remaining = years_remaining * 52
+months_remaining = years_remaining * 12
 
-days_already_spent = int(age) * 365
-weeks_already_spent = int(age) * 52
-months_already_spent = int(age) * 12
-
-remaining_days = total_days - days_already_spent
-remaining_weeks = total_weeks - weeks_already_spent
-remaining_months = total_months - months_already_spent
 
 print(
-    f"You have {remaining_days} days, {remaining_weeks} weeks, and {remaining_months} months left.")
+    f"You have {days_remaining} days, {weeks_remaining} weeks, and {months_remaining} months left.")
