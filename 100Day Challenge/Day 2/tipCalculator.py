@@ -20,6 +20,9 @@ number_of_people_as_int = int(input("How many people to split the bill?"))
 # calculation
 
 total_amount_paid = total_bill_as_int * (1 + tip_percent_as_int/100)
+total_amount_per_person = "{:.2f}".format(
+    total_amount_paid/number_of_people_as_int)
 
+# {:.2f} this is the function to format to two decimal points
 print(
-    f"Each person should pay:${round(total_amount_paid/number_of_people_as_int, 2)}")
+    f"Each person should pay:${total_amount_per_person}")
