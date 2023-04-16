@@ -1,6 +1,3 @@
-# dictionaries
-
-
 # test program
 def mystery(s):
     if (len(s) == 1):
@@ -9,3 +6,6 @@ def mystery(s):
 
 
 print(mystery("python"))
+
+
+# dictionaries
