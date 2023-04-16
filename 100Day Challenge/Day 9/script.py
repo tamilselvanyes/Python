@@ -39,3 +39,20 @@ for property in dictionary_example:
 
 for property in dictionary_example:
     print(dictionary_example[property])
+
+
+# Nesting and lists in dictionaries
+
+traval_log = {
+    "Tamil Nadu": ['Chennai', 'Coimbatore'],
+    "Hyderabad": ['Kondapur', "Dilshuknagar"]
+}
+
+
+# nesterd dictionary
+travel_log_dictionary = {
+    "Tamil Nady": {
+        "visited_place": ['Chennai', 'Coimbatore'],
+        "number_of_times": 10
+    }
+}
