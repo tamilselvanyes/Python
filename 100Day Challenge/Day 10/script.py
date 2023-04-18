@@ -5,6 +5,8 @@ def multiply(a, b):
 
 
 def format_name(first_name, last_name):
+    # docstring
+    """format the given first and last name"""
     return (f"{first_name.title()} {last_name.title()}")
 
 
