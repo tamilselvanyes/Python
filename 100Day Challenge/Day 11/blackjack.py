@@ -35,7 +35,7 @@ def start_game():
     user_withdrawn = False
     computer_withdrawn = False
     game_over = False
-    if (calculate_total(user_cards) == 0 or calculate_total(computer_cards) == 0):
+    if (calculate_total(user_cards) == 0):
         game_over = True
 
     while ((not user_withdrawn or not computer_withdrawn) and not game_over):
