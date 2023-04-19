@@ -25,8 +25,6 @@ def play_game():
     no_of_guesses = 0
 
     while (no_of_attempts > 0):
-        if (no_of_guesses != 0):
-            print("Guess again")
         print(f"You have {no_of_attempts} attempts to guess the number")
         guess = int(input("Make a guess: "))
         if (guess == correct_number):
@@ -40,8 +38,10 @@ def play_game():
             print("Too low")
             no_of_attempts -= 1
         no_of_guesses += 1
-    if (no_of_attempts == 0):
-        print("You've run out of guesses, you lose")
+        if (no_of_attempts == 0):
+            print("You've run out of guesses, you lose")
+        else:
+            print("Guess again")
 
 
 play_game()
