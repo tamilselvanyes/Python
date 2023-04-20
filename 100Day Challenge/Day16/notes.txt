@@ -1,0 +1,14 @@
+OOPs
+
+Example:
+
+Waiter class can many objects such has "Henry" , "Angela"
+
+has: attributes modelled by variables
+    is_holding_plate = true
+    tables_responsible = [1,2,3]
+
+does: methods modelled by functions
+    deliver_food():
+    collect_cash():
+    take_order():
