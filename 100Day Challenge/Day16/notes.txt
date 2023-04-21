@@ -12,3 +12,9 @@ does: methods modelled by functions
     deliver_food():
     collect_cash():
     take_order():
+
+ class name CarBlueprint() naming should be like this
+
+ [Object] = class
+ car = CarBlueprint()
+
