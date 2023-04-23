@@ -18,9 +18,8 @@ while start_again:
     else:
         if action == 'latte' or action == 'espresso' or action == "cappuccino":
             ordered_item = menu.find_drink(action)
-            if coffee_maker.is_resource_sufficient(ordered_item):
-                if money_machine.make_payment(ordered_item.cost):
-                    coffee_maker.make_coffee(ordered_item)
+            if coffee_maker.is_resource_sufficient(ordered_item) and money_machine.make_payment(ordered_item.cost):
+                coffee_maker.make_coffee(ordered_item)
         else:
             print("Wrong command, please try again...")
 
