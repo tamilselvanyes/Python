@@ -1,0 +1,16 @@
+basic import
+
+import turtle
+
+from...import...
+from turtle import Turtle
+
+import everything
+from turtle import * -- avoid mostly
+
+alias import
+
+import turtle as t
+
+
+Installing modules
