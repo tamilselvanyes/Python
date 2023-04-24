@@ -1,0 +1,7 @@
+constructor:
+
+Class Car:
+      def __init__(self):
+        //all the default attributes goes here
+
+init function called all the times when a new object is created
