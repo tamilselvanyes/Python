@@ -4,11 +4,12 @@
 # snake_case- all small but separated by "_"
 
 
-class User:
-    def __int__(self, name, user_name):
-        print(name)
-        self.name = name
+class UserTest:
+    def __init__(self, person_name, person_age):
+        self.name = person_name
+        self.age = person_age
 
 
-user_one = User("")
+new_user = UserTest("Tamil", 26)
+
 
