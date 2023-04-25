@@ -14,3 +14,8 @@ import turtle as t
 
 
 Installing modules
+
+Tuple::
+my_tuple = (3,
+It is similar to list but,
+tuple is craved in stone it cannot be changed, it is immutable
