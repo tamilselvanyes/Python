@@ -23,7 +23,6 @@ for _ in range(0, 100):
     turtle.speed("fastest")
     turtle.color(random_color())
     turtle.width(random.choice(widths))
-    turtle.color(random.choice(colors))
     turtle.setheading(random.choice(directions))
 
 screen = Screen()
