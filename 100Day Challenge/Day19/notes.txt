@@ -1,0 +1,10 @@
+def add(n1, n2)
+    return n1+n2
+
+def calculator(n1, n2, func):
+    return func(n1, n2)
+
+result = calculator(2, 3, add)
+
+High order Function::
+    Function which works with the other functions.
