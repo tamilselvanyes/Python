@@ -8,3 +8,6 @@ result = calculator(2, 3, add)
 
 High order Function::
     Function which works with the other functions.
+
+
+Class inheritance::
