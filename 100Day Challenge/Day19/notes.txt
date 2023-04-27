@@ -11,3 +11,10 @@ High order Function::
 
 
 Class inheritance::
+
+method inheritance
+attributes inheritance
+
+class Fish(Animal:: parent class):
+    def __int__(self):
+        super().__init__()
