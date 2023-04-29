@@ -20,3 +20,13 @@ class Fish(Animal):
 
 nemo = Fish()
 nemo.breathe()
+
+# list slicing::
+paino_keys = ["a", "b", "c", "e", "f", "g"]
+
+print(paino_keys[2:5])  # ['c', 'e', 'f']
+print(paino_keys[2:])  # ['c', 'e', 'f', 'g']
+print(paino_keys[:2])  # ['a', 'b']
+print(paino_keys[2:5:2])  # ['c', 'f'] every second in the range
+print(paino_keys[::2])  # every second element
+print(paino_keys[::-1])  # reverse the order of the list
