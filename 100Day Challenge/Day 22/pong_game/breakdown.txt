@@ -1,5 +1,7 @@
 creating a screen:
 1. creating a separation
+
+
 paddle
 1. moving the paddle up and down
 2. creating two paddle
