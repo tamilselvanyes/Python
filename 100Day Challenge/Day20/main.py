@@ -39,11 +39,10 @@ while game_is_on:
         score_card.game_over()
 
     # detect collision with itself
-    for segment in snake.segments:
-        if segment != snake.snake_head:
-            if snake.snake_head.distance(segment) < 1:
-                game_is_on = False
-                score_card.game_over()
+    for segment in snake.segments[1:]:
+        if snake.snake_head.distance(segment) < 1:
+            game_is_on = False
+            score_card.game_over()
 
 
 screen.exitonclick()
