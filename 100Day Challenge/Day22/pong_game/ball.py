@@ -15,3 +15,6 @@ class Ball(Turtle):
 
     def change_direction(self):
         self.setheading(360 - self.heading())
+
+    def paddle_bounce(self):
+        self.setheading(180 - self.heading())

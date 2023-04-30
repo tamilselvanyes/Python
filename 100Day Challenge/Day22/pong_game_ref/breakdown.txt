@@ -1,0 +1,22 @@
+creating a screen:
+1. creating a separation
+
+
+paddle
+1. moving the paddle up and down
+2. creating two paddle
+
+Ball tracking:
+1. Create the ball and make it move
+
+Collision detection:
+1. Wall collision detection and bounce backs
+2. Paddle collision detection and bounce back
+3. Ball missing the paddle detection
+
+scoreboard
+1. Tracking each player score
+
+
+
+
