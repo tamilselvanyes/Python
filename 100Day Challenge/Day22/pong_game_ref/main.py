@@ -2,6 +2,7 @@ from turtle import Screen
 from paddle import Paddle
 from ball import Ball
 import time
+from scorecard import Scorecard
 
 
 screen = Screen()
@@ -13,6 +14,7 @@ screen.tracer()
 player_one = Paddle((-380,0))
 player_two = Paddle((370,0))
 ball = Ball()
+scorecard = Scorecard()
 
 screen.listen()
 screen.onkey(player_one.move_up, 'w')
@@ -28,17 +30,19 @@ while game_is_on:
     ball.move_forward()
     ball_x_pos = ball.pos()[0]
     ball_y_pos = ball.pos()[1]
-    print(ball.distance(player_one), "1 distance")
-    print(ball.distance(player_two), "2 distance")
     if ball_y_pos > 270 or ball_y_pos < -270:
         ball.change_y_direction()
-    if ball.distance(player_one) < 30 or ball.distance(player_two) < 30:
+    if (ball.distance(player_one) < 50 and ball.xcor() < -340) or (ball.distance(player_two) < 50 and ball.xcor() > 340):
         ball.change_x_direction()
 
     if ball_x_pos > 380:
-        game_is_on = False
+        scorecard.player_one_score += 1
+        scorecard.update_score()
+        ball.ball_reset()
 
     if ball_x_pos < -380:
-        game_is_on = False
+        scorecard.player_two_score += 1
+        scorecard.update_score()
+        ball.ball_reset()
 
 screen.exitonclick()
