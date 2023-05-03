@@ -27,6 +27,7 @@ while game_is_on:
     for car in car_manager.all_cars:
         if player.distance(car) < 20:
             game_is_on = False
+            score.game_over()
         if player.ycor() > FINISH_LINE_Y:
             player.move_to_starting_point()
             car_manager.level_up()
