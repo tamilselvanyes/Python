@@ -10,7 +10,7 @@ class Player(Turtle):
     def __init__(self):
         super().__init__()
         self.penup()
-        self.goto(STARTING_POSITION)
+        self.move_to_starting_point()
         self.shape("turtle")
         self.setheading(90)
 
@@ -18,7 +18,7 @@ class Player(Turtle):
         self.goto(self.xcor(), self.ycor() + MOVE_DISTANCE)
 
     def move_down(self):
-        self.goto(self.xcor() , self.ycor() - MOVE_DISTANCE)
+        self.goto(self.xcor(), self.ycor() - MOVE_DISTANCE)
 
     def move_right(self):
         self.goto(self.xcor() + MOVE_DISTANCE, self.ycor())
@@ -26,4 +26,6 @@ class Player(Turtle):
     def move_left(self):
         self.goto(self.xcor() - MOVE_DISTANCE, self.ycor())
 
+    def move_to_starting_point(self):
+        self.goto(STARTING_POSITION)
 
