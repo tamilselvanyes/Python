@@ -1,0 +1,9 @@
+Read and writing the file from local
+
+With keyword will close the file automatically after usage
+
+By default, mode of file is read-only to change to write you have
+to specify mode to w(write)
+
+In write mode, if the file does not exist it will automatically
+create a new file
