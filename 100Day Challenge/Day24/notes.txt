@@ -7,3 +7,14 @@ to specify mode to w(write)
 
 In write mode, if the file does not exist it will automatically
 create a new file
+
+
+Absolute file path always starts from root directory
+absolute path
+/Users/tamilselvan/Desktop/data.txt
+
+Relative file path will be considered from the
+place where you are currently working on
+
+
+In MAC forward slash / for windows backward slash \
