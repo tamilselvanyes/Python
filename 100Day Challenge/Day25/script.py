@@ -16,4 +16,21 @@
 import pandas
 
 data = pandas.read_csv("weather_data.csv")
-print(data["temp"])
+
+temp_list = data['temp'].to_list()
+print(temp_list)
+
+total = 0;
+avg = 0
+for temp in temp_list:
+    total += temp
+
+avg = total / len(temp_list)
+
+avg_temp = data["temp"].mean()
+max_temp = data["temp"].max()
+
+print(data[data.day == "Monday"])
+
+max_temp_day = data[data.temp == max_temp]
+print(max_temp_day)
