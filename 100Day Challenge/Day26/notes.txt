@@ -1,0 +1,22 @@
+List Comprehension::
+
+new_list = [new_item for item in list]
+
+numbers = [1,2,3]
+
+new_numbers = [  number + 1  for number in numbers]
+
+name = "Tamil"
+
+new_name = [letter for letter in name]
+
+print(new_name) //convert the string to a list
+
+
+Dictionary Comprehension::
+
+new_dict = { new_key: new_value for item in list}
+
+new_dict = {new_key: new_value for (key,value) in dict.items()}
+
+.items() important
