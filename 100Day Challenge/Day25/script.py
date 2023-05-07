@@ -34,3 +34,11 @@ print(data[data.day == "Monday"])
 
 max_temp_day = data[data.temp == max_temp]
 print(max_temp_day)
+
+data_dictionary = {
+    "students": ["Tamil", "Sanjai", "Selvan"],
+    "marks": [56, 79, 90]
+}
+
+pandas_data = pandas.DataFrame(data_dictionary)
+pandas_data.to_csv("created_data_new.csv")
