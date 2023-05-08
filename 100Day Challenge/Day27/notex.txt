@@ -24,4 +24,5 @@ Hence you have to fill the lowest levels first
 You can't use pack and Grid together, these are incompatible
 with each other
 
-
+Padding:
+window.config(padx=30, pady=90)
