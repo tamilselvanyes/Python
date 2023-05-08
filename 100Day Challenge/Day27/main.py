@@ -1,14 +1,21 @@
-import tkinter
+from tkinter import *
 
-window = tkinter.Tk()
+window = Tk()
 window.title("My First GUI program")
 
 window.minsize(width=500, height=300)
 
 
-my_label = tkinter.Label(text= "I am Label",font=("Arial", 24, "bold"))
+my_label = Label(text= "I am Label",font=("Arial", 24, "bold"))
 
 my_label.pack()
 
+
+def button_click_handler():
+    my_label.config(text="Button is clicked")
+
+
+button = Button(text="Click me", command=button_click_handler)
+button.pack()
 
 window.mainloop()
