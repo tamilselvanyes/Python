@@ -1,0 +1,27 @@
+If the component is not packed or placed or grid
+it won't be visible
+
+
+Pack:
+
+Place the component in the screen from the top by default
+
+Place:
+Precise positioning(absolute positioning)
+.place(x=100, y=100) coordinate system
+
+Grid:
+
+Divides the page into number of rows and columns
+.grid(row=0, column=0)
+if the grid is not filled in the lowest level even if
+you give higher numbers for row and column it will be
+placed in the lowest level first
+
+Hence you have to fill the lowest levels first
+
+
+You can't use pack and Grid together, these are incompatible
+with each other
+
+
