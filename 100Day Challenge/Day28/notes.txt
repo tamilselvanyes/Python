@@ -1,0 +1,8 @@
+Dynamic Tying:
+
+The process of changing datatype of a variable
+on the go
+
+This dynamic tying is available only in python
+
+https://stackoverflow.com/questions/11328920/is-python-strongly-typed
