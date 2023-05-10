@@ -61,6 +61,23 @@ def save():
             password_input.delete(0, END)
 
 
+def search_handler():
+    website = website_input.get()
+    try:
+        with open("passwords.json") as file:
+            data = json.load(file)
+    except FileNotFoundError:
+        messagebox.showinfo(title=website, message=f"Data file not found")
+    else:
+        if website in data:
+            required_website = data[website]
+            email = required_website["email"]
+            password = required_website["password"]
+            messagebox.showinfo(title=website, message=f"Email:{email} \n Password:{password}")
+        else:
+            messagebox.showinfo(title=website, message=f"Website not found in your database")
+
+
 # ---------------------------- UI SETUP ------------------------------- #
 
 
@@ -77,9 +94,13 @@ website_label.config(text="Website:")
 website_label.grid(row=1, column=0)
 
 website_input = Entry()
-website_input.config(width=35)
-website_input.grid(row=1, column=1, columnspan=2)
+website_input.config(width=21)
+website_input.grid(row=1, column=1)
 website_input.focus()
+
+search_button = Button(bg="blue")
+search_button.config(text='Search', bg='black', command=search_handler, fg='blue', width=13)
+search_button.grid(row=1, column=2)
 
 email_label = Label()
 email_label.config(text="Email/Username:")
