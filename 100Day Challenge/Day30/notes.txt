@@ -22,3 +22,10 @@ finally: Do this no matter what happens
 Raising Exceptions:
 
 raise: can be used to raise an exception
+
+
+JSON in python:
+
+write: JSON.dump
+read: JSON.load
+update: JSON.update

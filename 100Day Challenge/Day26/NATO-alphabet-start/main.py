@@ -34,5 +34,9 @@ while game_is_on:
     if user_input == "EXIT":
         game_is_on = False
     else:
-        phonetic_words = [data_dict[letter] for letter in user_input]
-        print(phonetic_words)
+        try:
+            phonetic_words = [data_dict[letter] for letter in user_input]
+        except KeyError:
+            print("Sorry, Only Alphabets please")
+        else:
+            print(phonetic_words)
