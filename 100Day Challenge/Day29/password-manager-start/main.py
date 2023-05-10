@@ -47,13 +47,13 @@ def save():
             with open("passwords.json", mode="r") as file:
                 # Reading old data
                 data = json.load(file)
-                # updating the data with the new data
-                data.update(new_data)
         except FileNotFoundError:
             # if file is not found just create a new one
             with open("passwords.json", mode="w") as file:
                 json.dump(new_data, file, indent=4)
         else:
+            # updating the data with the new data
+            data.update(new_data)
             with open("passwords.json", mode="w") as file:
                 json.dump(data, file, indent=4)
         finally:
