@@ -1,0 +1,24 @@
+Exception Handling:
+
+FileNotFound Error
+opening a file which does not exist
+
+KeyError:
+Trying to access a key which is not found in dict
+
+IndexError:
+fruits= [1,2,3]
+fruits[10]
+
+TypeError:
+
+
+
+try: something that might cause an exception
+except: Do this if there was an exception
+else: Do this if there were no exception
+finally: Do this no matter what happens
+
+Raising Exceptions:
+
+raise: can be used to raise an exception
