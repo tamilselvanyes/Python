@@ -6,9 +6,15 @@ import math
 
 BACKGROUND_COLOR = "#B1DDC6"
 timer = None
+csv_data = {}
 
-csv_data = pandas.read_csv("./data/french_words.csv")
+try:
+    csv_data = pandas.read_csv("./data/words_to_learn.csv")
+except FileNotFoundError:
+    csv_data = pandas.read_csv("./data/french_words.csv")
+
 data_records = csv_data.to_dict(orient="records")
+current_card = {}
 
 
 def turn_card(word):
@@ -26,16 +32,22 @@ def count_down(count, word):
         window.after_cancel(timer)
 
 
-def right_click():
-    global timer
-
-    new_word = choice(data_records)
-    card.itemconfig(lang_text, fill="black",text="French")
-    card.itemconfig(word_text, fill="black", text=f"{new_word['French']}")
+def next_card():
+    global timer, current_card
+    current_card = choice(data_records)
+    card.itemconfig(lang_text, fill="black", text="French")
+    card.itemconfig(word_text, fill="black", text=f"{current_card['French']}")
     card.itemconfig(canvas_image, image=card_front)
     if timer:
         window.after_cancel(timer)
-    count_down(3, new_word)
+    count_down(3, current_card)
+
+
+def known_card():
+    data_records.remove(current_card)
+    list_df = pandas.DataFrame(data_records)
+    list_df.to_csv("./data/words_to_learn.csv")
+    next_card()
 
 
 window = Tk()
@@ -54,13 +66,13 @@ word_text = card.create_text(400, 263, font=("Ariel", 60, "bold"))
 card.grid(row=0, column=0, columnspan=2)
 # cross button
 cross_image = PhotoImage(file="./images/wrong.png")
-wrong_button = Button(image=cross_image, borderwidth=0, highlightthickness=0, command=right_click)
+wrong_button = Button(image=cross_image, borderwidth=0, highlightthickness=0, command=next_card)
 wrong_button.grid(row=1, column=0)
 # right button
 right_image = PhotoImage(file="./images/right.png")
-right_button = Button(image=right_image, borderwidth=0, highlightthickness=0, command=right_click)
+right_button = Button(image=right_image, borderwidth=0, highlightthickness=0, command=known_card)
 right_button.grid(row=1, column=1)
 
-right_click()
+next_card()
 
 window.mainloop()
