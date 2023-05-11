@@ -1,0 +1,7 @@
+How does email word?
+
+sender --> Gmail Mail Server --> Yahoo Mail Server (saved)
+
+while we log in we get the saved Mails from the server.
+
+SMTP -> Simple Mail Transfer Protocol
