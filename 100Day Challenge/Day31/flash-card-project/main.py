@@ -46,7 +46,7 @@ def next_card():
 def known_card():
     data_records.remove(current_card)
     list_df = pandas.DataFrame(data_records)
-    list_df.to_csv("./data/words_to_learn.csv")
+    list_df.to_csv("./data/words_to_learn.csv", index=False)
     next_card()
 
 
