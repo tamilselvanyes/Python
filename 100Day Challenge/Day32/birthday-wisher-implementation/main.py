@@ -35,13 +35,11 @@ try:
     month = now.month
 
     data = pandas.read_csv("./birthdays.csv")
-
     data_dict = data.to_dict(orient="records")
 
     for person in data_dict:
         print(person["day"], date)
         if person["month"] == month and person["day"] == date:
-            print("Some one's bday::")
             content = get_mail_content(person["name"])
             send_email(person["email"], content)
 
