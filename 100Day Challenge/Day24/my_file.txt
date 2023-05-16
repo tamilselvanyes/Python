@@ -1,2 +1,2 @@
 I was managed to change the content
- Appended a new line
+ Appended a new line to the end
