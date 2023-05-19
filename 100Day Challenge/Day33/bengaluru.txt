@@ -34,3 +34,5 @@ and Testing
 Software Technology Parks
 
 Policy and Next Big Thing or Wave
+
+State of Software Industry.
