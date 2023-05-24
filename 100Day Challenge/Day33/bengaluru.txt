@@ -46,3 +46,5 @@ Investigation
 csk vs gt
 
 ai and ml is the stuff I have to learn
+
+AI is everywhere
