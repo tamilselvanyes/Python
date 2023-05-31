@@ -40,6 +40,8 @@ WeekdayNumber = {
 }
 
 
+# Relative time span calculations
+
 def get_year_based_on_calendar(day, start_month_number):
     year = day.year
 
@@ -62,29 +64,55 @@ def calculate_quarter_dates(year, quarter, month_number):
         end_month = month_number + 3
         if end_month > 12:
             year += 1
+        # handling to not get month as 0
+        if end_month % 12 != 0:
+            end_month = end_month % 12
+
         start_date = datetime(year, start_month, 1)
-        end_date = datetime(year, end_month % 12, 1) + timedelta(days=-1)
+        end_date = datetime(year, end_month, 1) + timedelta(seconds=-1)
     elif quarter == 2:
         start_month = month_number + 3
         end_month = month_number + 6
         if start_month > 12 or end_month > 12:
             year += 1
-        start_date = datetime(year, start_month % 12, 1)
-        end_date = datetime(year, end_month % 12, 1) + timedelta(days=-1)
+
+        # handling to not get month as 0
+        if start_month % 12 != 0:
+            start_month = start_month % 12
+        if end_month % 12 != 0:
+            end_month = end_month % 12
+
+        start_date = datetime(year, start_month, 1)
+        end_date = datetime(year, end_month, 1) + timedelta(seconds=-1)
     elif quarter == 3:
         start_month = month_number + 6
         end_month = month_number + 9
         if start_month > 12 or end_month > 12:
             year += 1
-        start_date = datetime(year, (month_number + 6) % 12, 1)
-        end_date = datetime(year, (month_number + 9) % 12, 1) + timedelta(days=-1)
+        # handling to not get month as 0
+        if start_month % 12 != 0:
+            start_month = start_month % 12
+        if end_month % 12 != 0:
+            end_month = end_month % 12
+
+        start_date = datetime(year, start_month, 1)
+        end_date = datetime(year, end_month, 1) + timedelta(seconds=-1)
     elif quarter == 4:
-        start_month = month_number + 6
+        start_month = month_number + 9
         end_month = month_number + 12
         if start_month > 12 or end_month > 12:
             year += 1
-        start_date = datetime(year, (month_number + 9) % 12, 1)
-        end_date = datetime(year, (month_number + 12) % 12, 1) + timedelta(days=-1)
+        # handling to not get month as 0
+        if start_month % 12 != 0:
+            start_month = start_month % 12
+        if end_month % 12 != 0:
+            end_month = end_month % 12
+        # handled for end date for fourth quarter
+        if end_month == 24:
+            end_month = 12
+
+        start_date = datetime(year, start_month, 1)
+        end_date = datetime(year, end_month, 1) + timedelta(seconds=-1)
     else:
         raise ValueError("Invalid quarter value")
 
@@ -255,16 +283,16 @@ def calculate_relative_week_dates(start_month, start_week, relative_string):
 def calculate_relative_day_dates(relative_string):
     time_now = datetime.now()
     if relative_string == 'today':
-        start_date = time_now.replace(hour=0, minute=0, second=0, microsecond=0)
+        start_date = time_now.replace(hour=0, minute=0, second=0)
         end_date = time_now
 
     elif relative_string == 'yesterday':
-        end_date = time_now.replace(hour=0, minute=0, second=0, microsecond=0)
+        end_date = time_now.replace(hour=0, minute=0, second=0)
         start_date = end_date - timedelta(days=1)
 
     else:
         # last_2_days
-        end_date = time_now.replace(hour=0, minute=0, second=0, microsecond=0)
+        end_date = time_now.replace(hour=0, minute=0, second=0)
         start_date = end_date - timedelta(days=2)
 
     return start_date, end_date
@@ -273,13 +301,13 @@ def calculate_relative_day_dates(relative_string):
 def calculate_relative_hour_dates(relative_string):
     time_now = datetime.now()
     if relative_string == 'current_hour':
-        start_date = time_now.replace(minute=0, second=0, microsecond=0)
+        start_date = time_now.replace(minute=0, second=0)
         end_date = time_now
     elif relative_string == 'previous_hour':
-        end_date = time_now.replace(minute=0, second=0, microsecond=0)
+        end_date = time_now.replace(minute=0, second=0)
         start_date = end_date - timedelta(hours=1)
     else:
-        end_date = time_now.replace(minute=0, second=0, microsecond=0)
+        end_date = time_now.replace(minute=0, second=0)
         start_date = end_date - timedelta(hours=2)
     return start_date, end_date
 
@@ -299,4 +327,4 @@ def get_relative_date_range(calendar_start_month, calendar_start_week, time_grai
         return calculate_relative_hour_dates(relative_string)
 
 
-print(get_relative_date_range("november", "monday", "year", "previous_year"))
+print(get_relative_date_range("june", "monday", "week", "last_2_week"))
