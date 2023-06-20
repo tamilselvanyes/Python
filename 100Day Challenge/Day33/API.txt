@@ -4,3 +4,13 @@ Application Programming Interface
 
 It is like a Menu in a Restaurant you order(Request) and food item you
 receive(response)
+
+Response Codes:
+
+1XX - Hold on
+2XX - Here you go
+3XX - Go Away(No authentication)
+4XX - You screwed up
+5XX - I screwed up
+
+404 - doesn't exist
