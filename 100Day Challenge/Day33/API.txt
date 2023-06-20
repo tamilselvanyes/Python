@@ -1,0 +1,6 @@
+Request and Response:
+
+Application Programming Interface
+
+It is like a Menu in a Restaurant you order(Request) and food item you
+receive(response)
