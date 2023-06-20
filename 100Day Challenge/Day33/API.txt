@@ -14,3 +14,6 @@ Response Codes:
 5XX - I screwed up
 
 404 - doesn't exist
+
+
+API Parameters:
